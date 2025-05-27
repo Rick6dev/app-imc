@@ -49,6 +49,7 @@ class ImcResultScreen extends StatelessWidget {
               ),
               child: Container(
                 width: double.infinity,
+                height: 600,
                 decoration: BoxDecoration(
                   color: AppColors.backgroundComponent,
                   borderRadius: BorderRadius.circular(16),
