@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:imc_calculator/core/app_colors.dart';
 import 'package:imc_calculator/core/text_style.dart';
+import 'package:imc_calculator/screens/imc_home_screen.dart';
 
 class ImcResultScreen extends StatelessWidget {
   final double height;
@@ -16,11 +17,11 @@ class ImcResultScreen extends StatelessWidget {
     return Scaffold(
       appBar: toolbarResult(),
       backgroundColor: AppColors.background,
-      body: bodyResult(),
+      body: bodyResult(context),
     );
   }
 
-  Padding bodyResult() {
+  Padding bodyResult(context) {
     double fixedHeight = height / 100;
     double imcResult = weigth / (fixedHeight * fixedHeight);
 
@@ -94,7 +95,9 @@ class ImcResultScreen extends StatelessWidget {
             width: double.infinity,
             height: 60,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               child: Text("Regresar", style: TextStyles.bodyStyle),
               style: ButtonStyle(
                 shape: WidgetStateProperty.all(

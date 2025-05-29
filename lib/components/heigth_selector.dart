@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:imc_calculator/core/app_colors.dart';
+import 'package:imc_calculator/core/text_style.dart';
 
 class HeigthSelector extends StatefulWidget {
   final double height;
@@ -50,11 +51,11 @@ class _HeigthSelectorState extends State<HeigthSelector> {
               onChanged: (value) {
                 widget.OnHeightChange(value);
               },
-              min: 150,
+              min: 0,
               max: 220,
               divisions: 70,
 
-              label: "${widget.height}",
+              label: "${widget.height.toStringAsFixed(0)}",
               activeColor: AppColors.accent,
             ),
           ],
